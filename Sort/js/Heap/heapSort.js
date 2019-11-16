@@ -9,6 +9,12 @@ class Heap {
     getNode(i, side) {
         return 2 * i + side; 
     }
+    //
+    swap(x,y) {
+        var first = this.input[x];
+        this.input[x] = this.input[y];
+        this.input[y] = first;
+    }
     
 }
 class HeapSort extends Heap{
@@ -17,18 +23,19 @@ class HeapSort extends Heap{
         super( input );        
     }
     main() {
-        console.log(this.input)
+
         this.buildMaxHeap();
-        console.log(this.input)
+
         // the first element is moved to the end and the next largest element is moved to the first place on each iteration
         // the heapsize decreases because the end of the array become ordered
         for (var j = this.size-1; j >= 0; j--) {
-            this.input.swap(0, j);
+            //this.input.swap(0, j);
+            this.swap(0,j);
             this.size--;
             this.maxHeapify(0);
         }
-
         console.log(this.input);
+ 
 
     }
     buildMaxHeap() {
@@ -56,7 +63,8 @@ class HeapSort extends Heap{
             }
     
             if (largest != i) {
-                this.input.swap(i, largest);
+                //this.input.swap(i, largest);
+                this.swap(i, largest);
                 // we recursively call max heapify on the smallest element freshly moved so that it will moved in the array
                 // regarding its size
                 this.maxHeapify(largest);
@@ -65,11 +73,6 @@ class HeapSort extends Heap{
     
         
 }
-Array.prototype.swap = function (x,y) {
-    var b = this[x];
-    this[x] = this[y];
-    this[y] = b;
-    return this;
-}
+
 var heapSort = new HeapSort([1,2,3,4, 9, 5]);
 heapSort.main();
