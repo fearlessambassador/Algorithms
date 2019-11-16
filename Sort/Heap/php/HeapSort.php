@@ -11,8 +11,8 @@ echo 'eee';
      * 
      */
     public function __construct($input=[]) {
-        self::$heap = $input;
-        self::$size = count($input);
+        $this->heap = $input;
+        $this->size = count($input);
     }
  }
  class HeapSort {
