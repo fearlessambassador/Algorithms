@@ -1,4 +1,5 @@
 "use strict";
+
 class Heap {
     constructor(inputArray) {
         this.input = inputArray;
@@ -25,11 +26,10 @@ class HeapSort extends Heap {
     main() {
 
         this.buildMaxHeap();
-
-        // the first element is moved to the end and the next largest element is moved to the first place on each iteration
-        // the heapsize decreases because the end of the array become ordered
+        /* Move the first element to the end and the next larges telement is moved 
+        to the first place every iteration. Decrease the heap size as the end of the array
+        becomes ordered.*/
         for (var j = this.size-1; j >= 0; j--) {
-            //this.input.swap(0, j);
             this.swap(0,j);
             this.size--;
             this.maxHeapify(0);
@@ -39,15 +39,15 @@ class HeapSort extends Heap {
 
     }
     buildMaxHeap() {
-        // we only need to process the first half of the array because all 
-        // element will be checked (as we check the
-        // right and left node)
+        /* Only half of the array needs to be iterated as checking both right and left neighbour 
+        leads to check all the elements.*/
         var j = Math.floor(this.size / 2);
         for ( j;j >= 0; j-- ) {
             this.maxHeapify(j);
         }
     }
-        // the largest element between i, left(i) and right(i) will take the place of i
+        /* Put the largest element between i, left node to i and right node to i
+        to the place of i.*/
         maxHeapify(i) {
 
             var left = this.getNode(i, 1); // Left node.
@@ -63,7 +63,6 @@ class HeapSort extends Heap {
             }
     
             if (largest != i) {
-                //this.input.swap(i, largest);
                 this.swap(i, largest);
                 // we recursively call max heapify on the smallest element freshly moved so that it will moved in the array
                 // regarding its size

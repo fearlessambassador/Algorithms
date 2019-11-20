@@ -14,7 +14,7 @@
      * Creating a heap object.
      * @param array $input the array to be sorted.
      */
-    public function __construct(array $input=[]) {
+    public function __construct($input=[]) {
         $this->heap = $input;
         $this->size = count($input);
     }
@@ -57,7 +57,7 @@
      */
     private function buildMaxHeap() {
         // Only the half of the input array need to be iterated.
-        (int)$i = (int)$this->heap->size / 2;
+        (int)$i = ($this->heap->size / 2);
         for($i; $i>=0; $i--) {
             $this->maxHeapify($i);
         }        
