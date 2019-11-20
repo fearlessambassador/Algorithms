@@ -9,7 +9,7 @@ class Heap {
     getNode(i, side) {
         return 2 * i + side; 
     }
-    //
+    // Swap heap elements.
     swap(x,y) {
         var first = this.input[x];
         this.input[x] = this.input[y];
@@ -17,7 +17,7 @@ class Heap {
     }
     
 }
-class HeapSort extends Heap{
+class HeapSort extends Heap {
     
     constructor( input ) {
         super( input );        
@@ -74,5 +74,5 @@ class HeapSort extends Heap{
         
 }
 
-var heapSort = new HeapSort([1,2,3,4, 9, 5]);
+var heapSort = new HeapSort([7,2,3,4,9,5]);
 heapSort.main();
