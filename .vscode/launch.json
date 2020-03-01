@@ -5,7 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         
-
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
         {
             "name": "Listen for XDebug",
             "type": "php",
@@ -26,6 +32,6 @@
             "request": "launch",
             "name": "Launch Program",
             "program": "${file}"
-          }
+        }
     ]
 }

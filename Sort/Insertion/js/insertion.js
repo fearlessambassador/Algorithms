@@ -4,18 +4,21 @@
  * then sorts the sorted array again in descending order recursively.
  * Prints out the original array and the two sorted arrays.
  */
+var set = [11, 84, 3, 5, 8, -3, 4, -9, 0];
 
-var set = [11, 3, 5, 8, -3, 4, -9, 0];
 // Print the original array.
+console.log('Original:');
 console.log(set);
 
-var sortedSet = insertionSort(set);
+insertionSort(set);
 // Print the sorted array (ascending).
-console.log(sortedSet);
+console.log('Sorted (ascending):');
+console.log(set);
 
-var sortedSetRecursive = insertionSortRecursive(sortedSet, sortedSet.length);
+insertionSortRecursive(set, set.length);
 // Print the sorted array (descending).
-console.log(sortedSetRecursive);
+console.log('Sorted (descending):');
+console.log(set);
 
 function insertionSort(set)
 {
@@ -40,16 +43,16 @@ function insertionSort(set)
 
 function insertionSortRecursive(set, length)
 {
-    if (length <= 1) {
-        return set;
-    }
-    
-    let lastElem = set[length - 1];
-    let j = length - 2;
-    while (j >= 0 && set[j] < lastElem) {
-        set[j + 1] = set[j];
-        j--;
-    }
-    set[j] = lastElem;
-    insertionSortRecursive(set, length - 1);
+    if (length > 0) {
+
+        insertionSortRecursive(set, length - 1);
+        let lastElem = set[length - 1];
+        let j = length - 2;
+        while (j >= 0 && set[j] < lastElem) {
+            set[j + 1] = set[j];
+            j--;
+        }
+        set[j + 1] = lastElem;
+    } 
+
 }
