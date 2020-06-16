@@ -2,7 +2,19 @@
 
 
 def binary_search(arr, l, r, x):
-    """ Binary search algorithm. """
+    """ Binary search algorithm. 
+    
+    Parameters:
+    arr (list): set of numbers to search in.
+    l (int): first index.
+    r (int): length of the arr list.
+    x (int): the value we are looking for.
+
+    Returns:
+    string: A formatted string of the searched value and the
+    index where it is placed in the list OR Element not found.
+    """
+
     if r >= l:
 
         # Mid point.
@@ -11,8 +23,8 @@ def binary_search(arr, l, r, x):
         # If middle element of array is the
         # searched element.
         if arr[mid] == x:
-            return 'Found value {value} at idndex: {index}.' \
-            .format( value = str(x), index = str(mid))
+            return 'Found value: {value} at index: {index}.' \
+            .format( value = str(x), index = str(mid) )
 
         # Middle elem is greater than the searched value.
         elif arr[mid] > x:
@@ -31,4 +43,4 @@ arr = [2, 3, 4, 10, 30, 40, 55]
 n = len(arr) - 1
 
 result = binary_search(arr, 0, n, 10)
-print (result) 
+print (result)

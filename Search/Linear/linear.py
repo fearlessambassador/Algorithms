@@ -1,19 +1,26 @@
 
 
 
-def linear_search(arr, n, x):
+def linear_search(vals, x):
+    """ Linear search algorithm.
 
+    Parameters:
+    vals (list): set of numbers to search in.
+    x (int): the value we are looking for.
+
+    Returns:
+    string: A formatted string of the searched value and the
+    index where it is placed in the list OR Element not found.
+    """
+    n = len(vals)
     for i in range(0, n):
-        if (arr[i] == x):
-            return i
+        if (vals[i] == x):
+            return 'Found value: {value} at index: {index}.' \
+            .format( value = str(x), index = str(i) )
         
-    return -1
+    return 'Element not found.'
 
 arr = [1, 3, 5, 8, 9, 13]
-n = len(arr)
 x = 13
-result = linear_search(arr, n, x)
-if (result == -1):
-    print("Element is not present in array") 
-else:
-    print("Element is present at index", result)
+result = linear_search(arr, x)
+print(result)

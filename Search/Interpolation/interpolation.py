@@ -1,7 +1,16 @@
 
 
 def interpolation_search(vals, x):
-    """ Basic interpolation search algorithm."""
+    """ Basic interpolation search algorithm.
+    
+    Parameters:
+    vals (list): set of numbers to search in.
+    x (int): the value we are looking for.
+
+    Returns:
+    string: A formatted string of the searched value and the
+    index where it is placed in the list OR Element not found.
+    """
 
     # First item's ID.
     id_0 = 0
@@ -16,8 +25,8 @@ def interpolation_search(vals, x):
 
         # Compare mid value with search val.
         if vals[mid] == x:
-            return 'Found value {value} at idndex: {index}.' \
-            .format( value = str(x), index = str(mid))
+            return 'Found value: {value} at index: {index}.' \
+            .format( value = str(x), index = str(mid) )
 
         if vals[mid] < x:
             id_0 = mid + 1
