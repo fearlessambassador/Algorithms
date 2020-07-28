@@ -9,8 +9,9 @@ def bogo_sort(arr, count):
 
     Returns:
     string: A formatted string of the sorted list and the
-    iteration count OR Element not found.
+    iteration count.
     """
+
     if is_sorted(arr) ==  False:
         random.shuffle(arr) # Shuffle the list.
         return bogo_sort(arr, count+1) # Recursion.
@@ -28,6 +29,7 @@ def is_sorted(arr):
     Returns:
     True or False.
     """
+    
     n = len(arr)
     for i in range(0, n-1):
         if arr[i] > arr[i+1]:

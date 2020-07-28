@@ -6,7 +6,7 @@ class Graph():
         self.V = vertices 
         self.graph = [[0 for column in range(vertices)]  
                     for row in range(vertices)] 
-        print()
+
    
     def printSolution(self, dist): 
         print("Vertex \tDistance from Source")
@@ -39,7 +39,7 @@ class Graph():
         dist[src] = 0
         sptSet = [False] * self.V 
    
-        for cout in range(self.V): 
+        for i in range(self.V): 
    
             # Pick the minimum distance vertex from  
             # the set of vertices not yet processed.  

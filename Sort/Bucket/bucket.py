@@ -13,6 +13,16 @@ def insertion_sort(b):
 
 
 def bucket_sort(x):
+    """ Bucket sort algorithm.
+    
+    Parameters:
+    x (list): set of numbers to search in.
+    count (int): iteration count.
+
+    Returns:
+    string: A formatted string of the sorted list and the
+    iteration count.
+    """
     arr = []
     slot_num = 10
     for i in range(slot_num):
@@ -31,8 +41,11 @@ def bucket_sort(x):
             x[k] = arr[i][j]
             k += 1
 
-    return x
+    return 'Sorted list: {list}.' \
+            .format( list = ','.join(str(e) for e in x))
 
 
-x = [0.222, 0.333, 0.555, 0.444, 0.111]
-print(bucket_sort(x))
+arr = [0.222, 0.333, 0.555, 0.444, 0.111]
+
+res = bucket_sort(arr)
+print(res)
