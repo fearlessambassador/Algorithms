@@ -1,4 +1,4 @@
-def fibonacci_search(arr, val):
+def fibonacci_search(arr: list, val: int) -> str:
     """ Fibonacci search algorithm. 
     
     Parameters:
@@ -42,4 +42,6 @@ def fibonacci_search(arr, val):
             
     return 'Element not found.'
 
-print(fibonacci_search([1,2,3,4,5,6,7,8,9,10,11], 1))
+arr = [1,2,3,4,5,6,7,8,9,10,11]
+res = fibonacci_search(arr, 1)
+print(res)

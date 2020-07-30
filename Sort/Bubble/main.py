@@ -1,7 +1,7 @@
 
 
 
-def bubble_sort(arr):
+def bubble_sort(arr: list) -> str:
     """ Bubble sort algorithm.
     
     Parameters:

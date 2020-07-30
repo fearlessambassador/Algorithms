@@ -1,6 +1,6 @@
 
 
-def binary_search(arr, l, r, x):
+def binary_search(arr: list, l: int, r: int, x: int) -> str:
     """ Binary search algorithm. 
     
     Parameters:
@@ -10,8 +10,7 @@ def binary_search(arr, l, r, x):
     x (int): the value we are looking for.
 
     Returns:
-    int: the index of the searched element, or
-    -1 if not found.
+    int: the index of the searched element OR Element not found.
     """
     if r >= l:
 
@@ -29,10 +28,10 @@ def binary_search(arr, l, r, x):
             return binary_search(arr, mid + 1, r, x)
 
     else:
-        return -1
+        return 'Element not found.'
 
 
-def exponential_search(arr, n, x):
+def exponential_search(arr: list, n: int, x: int) -> str:
     """ Exponential search algorithm. 
     
     Parameters:

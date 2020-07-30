@@ -1,6 +1,6 @@
 import random
 
-def bogo_sort(arr, count):
+def bogo_sort(arr: list, count: int) -> str:
     """ Bogo sort algorithm.
     
     Parameters:
@@ -20,7 +20,7 @@ def bogo_sort(arr, count):
             .format( list = ','.join(str(e) for e in arr),  \
             count = count )
 
-def is_sorted(arr):
+def is_sorted(arr: list) -> bool:
     """ Iterate over the list to see if it already sorted.
 
     Parameters:

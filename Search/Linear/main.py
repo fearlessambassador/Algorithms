@@ -1,7 +1,7 @@
 
 
 
-def linear_search(vals, x):
+def linear_search(vals: list, x: int) -> str:
     """ Linear search algorithm.
 
     Parameters:

@@ -1,7 +1,7 @@
 
 
 
-def binary_search(arr, l, r, x):
+def binary_search(arr: list, l: int, r: int, x: int) -> str:
     """ Binary search algorithm. 
     
     Parameters:

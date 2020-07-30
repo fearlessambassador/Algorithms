@@ -1,6 +1,6 @@
 
 
-def interpolation_search(vals, x):
+def interpolation_search(vals: list, x: int) -> str:
     """ Basic interpolation search algorithm.
     
     Parameters:

@@ -1,6 +1,14 @@
 
 
-def insertion_sort(b):
+def insertion_sort(b: list) -> list:
+    """ Insertion sort algorithm.
+    
+    Parameters:
+    b (list): subset of numbers to search in.
+
+    Returns:
+    list: the sorted subset of numbers.
+    """
     for i in range(1, len(b)):
         up = b[i]
         j = i - 1
@@ -12,7 +20,7 @@ def insertion_sort(b):
     return b
 
 
-def bucket_sort(x):
+def bucket_sort(x: list) -> str:
     """ Bucket sort algorithm.
     
     Parameters:

@@ -1,8 +1,6 @@
-
-
 import math
 
-def jump_search(arr, x):
+def jump_search(arr: list, x: int) -> str:
     """ Jump search algorithm.
     
     Parameters:
