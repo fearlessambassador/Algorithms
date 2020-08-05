@@ -1,31 +1,37 @@
 def pigeonhole_sort(a): 
-    # size of range of values in the list  
-    # (ie, number of pigeonholes we need) 
-    my_min = min(a) 
-    my_max = max(a) 
-    size = my_max - my_min + 1
+    """ Pigeonhole sort algorithm.
+    
+    Parameters:
+    a (list): set of numbers to search in.
+
+    Returns:
+    string: A formatted string of the sorted list.
+    """
+
+    lowest = min(a) 
+    highest = max(a) 
+    # Size of the pigeonholes.
+    size = highest - lowest + 1
   
-    # our list of pigeonholes 
     holes = [0] * size 
   
-    # Populate the pigeonholes. 
+    # Fill the pigeonholes. 
     for x in a: 
-        assert type(x) is int, "integers only please"
-        holes[x - my_min] += 1
+        holes[x - lowest] += 1
   
-    # Put the elements back into the array in order. 
+    # Insert the elems back to the original list. 
     i = 0
     for count in range(size): 
         while holes[count] > 0: 
             holes[count] -= 1
-            a[i] = count + my_min 
+            a[i] = count + lowest 
             i += 1
+    
+    return 'Sorted list: {list}.' \
+            .format( list = ','.join(str(e) for e in a))  
               
   
-a = [0, 8, 3, 2, 7, 4, 6, 8, 12] 
-print("Sorted order is : ", end = ' ') 
+a = [0, 8, 3, 2, 7, 4, 6, 8, 12, 47] 
   
-pigeonhole_sort(a) 
-          
-for i in range(0, len(a)): 
-    print(a[i], end = ' ') 
+res = pigeonhole_sort(a) 
+print(res) 

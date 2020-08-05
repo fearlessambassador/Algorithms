@@ -7,6 +7,7 @@ def insertion_sort(arr: list) -> str:
     Returns:
     list: the sorted subset of numbers.
     """
+    
     for i in range(1, len(arr)):
 
         key = arr[i]

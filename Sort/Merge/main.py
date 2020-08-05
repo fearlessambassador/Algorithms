@@ -17,7 +17,19 @@ class Languages:
 
 def merge(arr: list, l_index: int, r_index: int, \
     mid: int, comparison_func) -> list:
+    """ To sort and reindex the subsets.
+    
+    Parameters:
+    arr (list): set of numbers to search in.
+    l_index (int): left index.
+    r_index (int): right index.
+    mid (int): middle index.
+    comparison_func (function): comparison function.
+    Returns:
+    string: A formatted string of the sorted list.
+    """
 
+    # Split the list into 2.
     l_copy = arr[l_index : mid+1]
     r_copy = arr[mid+1 : r_index+1]
 
@@ -49,9 +61,20 @@ def merge(arr: list, l_index: int, r_index: int, \
 
 
 def merge_sort(arr: list, l_index: int, r_index: int, comparison_func):
+    """ Merge sort algorithm.
+    
+    Parameters:
+    arr (list): set of numbers to search in.
+    l_index (int): left index.
+    r_index (int): right index.
+
+    Returns:
+    string: A formatted string of the sorted list and the
+    iteration count.
+    """
 
     if l_index >= r_index:
-        return
+        return arr
 
     mid = (l_index + r_index) // 2
     merge_sort(arr, l_index, mid, comparison_func)
@@ -59,6 +82,7 @@ def merge_sort(arr: list, l_index: int, r_index: int, comparison_func):
     merge(arr, l_index, r_index, mid, comparison_func)
 
 
+# Create Language instances.
 lang_1 = Languages('IPL', 1954, 'Allen Newell, Cliff Shaw, and Herbert A. Simon')
 lang_2 = Languages('Regional Assembly Language', 1951, 'David Wheeler')
 lang_3 = Languages('FLOW-MATIC', 1955, 'Grace Hopper')

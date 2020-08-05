@@ -8,8 +8,7 @@ def bubble_sort(arr: list) -> str:
     arr (list): set of numbers to search in.
 
     Returns:
-    string: A formatted string of the sorted list and the
-    iteration count.
+    string: A formatted string of the sorted list.
     """
     n = len(arr)
 
