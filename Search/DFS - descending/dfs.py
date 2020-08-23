@@ -22,6 +22,7 @@ class DFS(Graph):
         v (int): Vertice.
 
         """
+
         # Set the current node to visited.
         self.visited[v] = True
 
@@ -39,6 +40,7 @@ class DFS(Graph):
         Parameters:
         v (int): the node.
         """
+        
         # Set all nodes/ vertices as not visited.
         self.visited = [False] * (max(self.diags) + 1)
 
